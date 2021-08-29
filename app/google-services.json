@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "958282355594",
+    "firebase_url": "https://sportin-23c44-default-rtdb.firebaseio.com",
+    "project_id": "sportin-23c44",
+    "storage_bucket": "sportin-23c44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:958282355594:android:d0c982ace961b736df2e73",
+        "android_client_info": {
+          "package_name": "com.example.sportin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "958282355594-tr7l2vlulabvq23cq985tn662kute2ot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBas-qsfFGYv7VVZek3Jjrx249ybWinfgQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "958282355594-tr7l2vlulabvq23cq985tn662kute2ot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
