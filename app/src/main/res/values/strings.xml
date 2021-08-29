@@ -2,4 +2,11 @@
     <string name="app_name">SportIn</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_account">Create Account</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="xyz_gmail_com">xyz@gmail.com</string>
+    <string name="email_address">Email Address</string>
 </resources>
