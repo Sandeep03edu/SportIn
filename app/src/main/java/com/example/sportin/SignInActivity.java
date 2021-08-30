@@ -29,6 +29,17 @@ public class SignInActivity extends AppCompatActivity {
     private TextView signup;
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        if (FirebaseAuth.getInstance().getCurrentUser()!=null){
+            Intent intent = new Intent(this,MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
@@ -38,11 +49,6 @@ public class SignInActivity extends AppCompatActivity {
         signInPassword = findViewById(R.id.signIn_password);
         login = findViewById(R.id.login);
         signup = findViewById(R.id.signup);
-
-        if (mAuth.getCurrentUser()!=null){
-            Intent intent = new Intent(this,MainActivity.class);
-            startActivity(intent);
-        }
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

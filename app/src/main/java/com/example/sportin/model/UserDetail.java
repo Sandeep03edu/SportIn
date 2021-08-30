@@ -3,28 +3,29 @@ package com.example.sportin.model;
 public class UserDetail {
     private String userName;
     private String professionSport;
-    private String fun_sport;
+    private String funSport;
 
     public UserDetail() {
+
     }
 
-    public UserDetail( String userName, String professionSport, String fun_sport){
+    public UserDetail( String userName, String professionSport, String funSport){
         this.userName=userName;
         this.professionSport=professionSport;
-        this.fun_sport=fun_sport;
+        this.funSport = funSport;
     }
 
-    public UserDetail( String userName, String professionSport){
-        this.userName=userName;
-        this.professionSport=professionSport;
-    }
+//    public UserDetail( String userName, String professionSport){
+//        this.userName=userName;
+//        this.professionSport=professionSport;
+//    }
 
     public UserDetail( String userName){
         this.userName=userName;
     }
 
-    public String getFun_sport() {
-        return fun_sport;
+    public String getFunSport() {
+        return funSport;
     }
 
     public String getProfessionSport() {
