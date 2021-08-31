@@ -27,17 +27,7 @@ public class SignInActivity extends AppCompatActivity {
     private EditText signInEMail, signInPassword;
     private Button login;
     private TextView signup;
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        if (FirebaseAuth.getInstance().getCurrentUser()!=null){
-            Intent intent = new Intent(this,MainActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            startActivity(intent);
-            finish();
-        }
-    }
+    private String TAG="SignInActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +60,7 @@ public class SignInActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (!task.isSuccessful()) {
-                                        Log.d("aassd",task.toString());
+                                        Log.d(TAG,task.toString());
                                         Toast.makeText(SignInActivity.this, "Login Error ,Please Login In", Toast.LENGTH_LONG).show();
                                     } else {
                                         Intent mainActivityIntent = new Intent(SignInActivity.this, MainActivity.class);
@@ -89,5 +79,16 @@ public class SignInActivity extends AppCompatActivity {
                 startActivity(signUpIntent);
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (FirebaseAuth.getInstance().getCurrentUser()!=null){
+            Intent intent = new Intent(this,MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+            finish();
+        }
     }
 }

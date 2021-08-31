@@ -5,6 +5,10 @@
         android:icon="@drawable/ic_baseline_home_24"
         android:title="Home" />
     <item
+        android:id="@+id/createPostFragment"
+        android:icon="@drawable/ic_baseline_add_box_24"
+        android:title="Create Post"/>
+    <item
         android:id="@+id/profileFragment"
         android:icon="@drawable/ic_baseline_person_24"
         android:title="Profile"/>
