@@ -15,4 +15,9 @@
         android:name="com.example.sportin.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/createPostFragment"
+        android:name="com.example.sportin.CreatePostFragment"
+        android:label="fragment_create_post"
+        tools:layout="@layout/fragment_create_post" />
 </navigation>
