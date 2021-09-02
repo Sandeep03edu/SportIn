@@ -135,23 +135,30 @@ public class CreatePostFragment extends Fragment {
 //
 //            th.start();
 
-            final Bitmap[] bt = new Bitmap[1];
-            Thread th = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), selectedImage);
-                        bt[0] = bitmap;
-                        Log.d(TAG, bitmap.toString());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-            th.start();
+//            final Bitmap[] bt = new Bitmap[1];
+//            Thread th = new Thread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    try {
+//                        Bitmap bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), selectedImage);
+//                        bt[0] = bitmap;
+//                        Log.d(TAG, bitmap.toString());
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
+//            th.start();
 
-
-            postImage.setImageURI(selectedImage);
+            Bitmap bitmap = null;
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), selectedImage);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            Bitmap redBitmap = ImageResizer.reduceBitmapSize(bitmap, 240000);
+            postImage.setImageBitmap(redBitmap);
+//            postImage.setImageURI(selectedImage);
 //                Bitmap bitmap = MediaStore.Images.Media.getBitmap(context.getContentResolver(), selectedImage);
 
         }
