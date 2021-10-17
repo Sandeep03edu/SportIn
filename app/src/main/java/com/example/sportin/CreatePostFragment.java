@@ -17,6 +17,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -167,7 +168,7 @@ public class CreatePostFragment extends Fragment {
                 if (postImageUri != null && caption!=null) {
                     progressBar.setVisibility(View.VISIBLE);
                     Log.d(TAG,"Entering !(postImageUri == null) && !caption.isEmpty()");
-                    uploadPost(caption, redBitmap);
+                    uploadPost(caption, redBitmap, view);
                 }
                 else Toast.makeText(context,"Write some text and add some images you want to share",Toast.LENGTH_SHORT).show();
             }
@@ -262,7 +263,7 @@ public class CreatePostFragment extends Fragment {
         redBitmap = ImageResizer.reduceBitmapSize(bitmap, 240000);
     }
 
-    private void uploadPost(String postCaption, Bitmap bitmap) {
+    private void uploadPost(String postCaption, Bitmap bitmap, View view) {
         Log.d(TAG,"Entering uploadpost method");
         String filePathName = "Users/" + "UserId/" + userId + "Post";
 //        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -304,7 +305,8 @@ public class CreatePostFragment extends Fragment {
                                             ;
                                             postImageUri = null;
                                             postImage.setImageURI(null);
-                                            //TODO: navigate from this fragment to home fragment.
+
+                                            Navigation.findNavController(view).navigate(R.id.action_createPostFragment_to_homeFragment);
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
